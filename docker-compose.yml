@@ -32,6 +32,18 @@ services:
       - ./letsencrypt/vhost.d:/etc/nginx/vhost.d
       - ./letsencrypt/html:/usr/share/nginx/html
 
+  logrotate:
+    image: registry.gitlab.com/seka19/docker-images/app/logrotate:1.3
+    container_name: ${COMPOSE_PROJECT_NAME}-logrotate
+    restart: always
+    environment:
+      LOGS_DIRECTORIES: /var/log/nginx
+      LOGROTATE_INTERVAL: daily
+      LOGROTATE_COPIES: 1
+      LOGROTATE_SIZE: 100M
+    volumes:
+      - ./logs/:/var/log/nginx
+
 networks:
   docker-proxy:
     name: docker-proxy
