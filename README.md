@@ -4,15 +4,15 @@
 
 ```
 curl -fsSL https://get.docker.com -o get-docker.sh
-sh get-docker.sh
-usermod -aG docker username
+sudo sh get-docker.sh
+sudo usermod -aG docker $USER
 ```
 
 # Setup docker-compose
 
 ```
 curl -sL "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-chmod +x /usr/local/bin/docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 # Setup docker-proxy
