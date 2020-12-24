@@ -1,5 +1,3 @@
-> All as `sudo`
-
 # Setup Docker
 
 ```
