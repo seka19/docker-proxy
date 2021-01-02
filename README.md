@@ -19,7 +19,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 
 ```
 curl -fsSL https://github.com/seka19/docker-proxy/archive/0.3.tar.gz -o docker-proxy.tar.gz
-mkdir -p /var/www/docker-proxy
+sudo mkdir -p /var/www/docker-proxy && sudo chown -R $USER:$(id -gn) /var/www
 tar xfz docker-proxy.tar.gz --strip-components=1 -C /var/www/docker-proxy
 cd /var/www/docker-proxy
 docker-compose up -d
