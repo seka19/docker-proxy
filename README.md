@@ -22,5 +22,6 @@ curl -fsSL https://github.com/seka19/docker-proxy/archive/0.3.tar.gz -o docker-p
 sudo mkdir -p /var/www/docker-proxy && sudo chown -R $USER:$(id -gn) /var/www
 tar xfz docker-proxy.tar.gz --strip-components=1 -C /var/www/docker-proxy
 cd /var/www/docker-proxy
+docker login registry.gitlab.com
 docker-compose up -d
 ```
