@@ -6,6 +6,8 @@ sudo sh get-docker.sh
 sudo usermod -aG docker $USER
 ```
 
+Then reboot server.
+
 # Setup docker-compose
 
 ```
