@@ -2,21 +2,20 @@ version: "3.7"
 
 services:
   nginx-proxy:
-    image: jwilder/nginx-proxy:alpine
+    image: registry.gitlab.com/seka19/docker-images/app/nginx-proxy
     container_name: docker-proxy-nginx
     environment:
       DHPARAM_GENERATION: "false"
     ports:
       - "80:80"
       - "443:443"
+      - "6001:6001"
     volumes:
       - /var/run/docker.sock:/tmp/docker.sock:ro
       - ./letsencrypt/certs:/etc/nginx/certs
       - ./letsencrypt/vhost.d:/etc/nginx/vhost.d
       - ./letsencrypt/html:/usr/share/nginx/html
       - ./logs/:/var/log/nginx
-      - ./custom.conf:/etc/nginx/conf.d/custom.conf
-      - ./Procfile:/app/Procfile
     networks:
       - docker-proxy
 
