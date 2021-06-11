@@ -2,7 +2,7 @@ version: "3.7"
 
 services:
   nginx-proxy:
-    image: registry.gitlab.com/seka19/docker-images/app/nginx-proxy
+    image: registry.gitlab.com/seka19/docker-images/app/nginx-proxy:0.9.0
     container_name: docker-proxy-nginx
     environment:
       DHPARAM_GENERATION: "false"
