@@ -18,7 +18,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 # Setup docker-proxy
 
 ```
-curl -fsSL https://github.com/seka19/docker-proxy/archive/0.5.tar.gz -o docker-proxy.tar.gz
+curl -fsSL https://github.com/seka19/docker-proxy/archive/0.6.tar.gz -o docker-proxy.tar.gz
 sudo mkdir -p /var/www/docker-proxy && sudo chown -R $USER:$(id -gn) /var/www
 tar xfz docker-proxy.tar.gz --strip-components=1 -C /var/www/docker-proxy
 cd /var/www/docker-proxy
